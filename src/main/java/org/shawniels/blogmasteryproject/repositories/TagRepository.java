@@ -1,4 +1,7 @@
 package org.shawniels.blogmasteryproject.repositories;
 
-public interface TagRepository {
+import org.shawniels.blogmasteryproject.entities.Tag;
+import org.springframework.data.repository.CrudRepository;
+
+public interface TagRepository extends CrudRepository<Tag, Long> {
 }

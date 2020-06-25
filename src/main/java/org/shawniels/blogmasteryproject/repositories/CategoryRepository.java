@@ -1,4 +1,7 @@
 package org.shawniels.blogmasteryproject.repositories;
 
-public interface CategoryRepository {
+import org.shawniels.blogmasteryproject.entities.Category;
+import org.springframework.data.repository.CrudRepository;
+
+public interface CategoryRepository extends CrudRepository<Category, Long> {
 }

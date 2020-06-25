@@ -1,4 +1,7 @@
 package org.shawniels.blogmasteryproject.repositories;
 
-public interface AuthorRepository {
+import org.shawniels.blogmasteryproject.entities.Author;
+import org.springframework.data.repository.CrudRepository;
+
+public interface AuthorRepository extends CrudRepository<Author, Long> {
 }
