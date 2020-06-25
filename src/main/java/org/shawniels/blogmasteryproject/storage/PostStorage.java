@@ -1,5 +1,6 @@
 package org.shawniels.blogmasteryproject.storage;
 
+import org.shawniels.blogmasteryproject.entities.Post;
 import org.shawniels.blogmasteryproject.repositories.PostRepository;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +18,10 @@ public class PostStorage {
     // Getters
     public PostRepository getPostRepo() {
         return postRepo;
+    }
+
+    // Other methods
+    public Iterable<Post> findAllPosts() {
+        return postRepo.findAll();
     }
 }
