@@ -21,7 +21,6 @@ public class Category {
     }
 
     // Getters
-
     public String getName() {
         return name;
     }
@@ -29,7 +28,6 @@ public class Category {
         return posts;
     }
 
-    // Other methods
     // Other methods
     @Override
     public String toString() {

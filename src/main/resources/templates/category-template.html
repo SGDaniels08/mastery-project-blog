@@ -21,13 +21,13 @@
 <body>
     <h2 th:text="${category.name} + ' Posts'">CATEGORY Posts</h2>
     <article th:each="post : ${category.posts}">
-        <h2 th:text="${post.title}" class="post__title">POST TITLE</h2>
-        <h4 th:text="${post.author}" class="post__author">AUTHOR</h4>
-        <h4 th:text="${post.publishDate}" class="post__publish-date">PUBLISH-DATE</h4>
-        <h3 th:text="${post.category}" class="post__category">CATEGORY</h3>
+        <h2 class="post__title" th:text="${post.title}">POST TITLE</h2>
+        <h4 class="post__author"><a th:text="${post.author}" th:href="'/authors/' + ${post.author}">AUTHOR</a></h4>
+        <h4 class="post__publish-date" th:text="${post.publishDate}">PUBLISH-DATE</h4>
+        <h3 class="post__category"><a th:text="${post.category}" th:href="'/categories/' + ${post.category}">CATEGORY</a></h3>
         <h3>Tags:</h3>
         <ul th:each="tag : ${post.tags}">
-            <li th:text="${tag.name}">TAG</li>
+            <li><a th:text="${tag.name}" th:href="'/tags/' + ${tag.name}">TAG</a></li>
         </ul>
         <p th:text="${post.content}" class="post__content"></p>
     </article>

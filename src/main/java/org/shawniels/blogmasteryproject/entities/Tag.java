@@ -11,7 +11,7 @@ public class Tag {
     // Instance Variables
     @Id
     private String name;
-    @ManyToMany
+    @ManyToMany (mappedBy = "tags")
     private Collection<Post> posts;
 
     // Constructors
