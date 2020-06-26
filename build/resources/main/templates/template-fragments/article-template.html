@@ -1,0 +1,13 @@
+<!-- Contained within each <article> tag -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<h2 class="post__title" th:text="${post.title}">POST TITLE</h2>
+<h4 class="post__author"><a th:text="${post.author}" th:href="'/authors/' + ${post.author}">AUTHOR</a></h4>
+<h4 class="post__publish-date" th:text="${post.publishDate}">PUBLISH-DATE</h4>
+<h3 class="post__category"><a th:text="${post.category}" th:href="'/categories/' + ${post.category}">CATEGORY</a></h3>
+<h3>Tags:</h3>
+<ul th:each="tag : ${post.tags}">
+    <li><a th:text="${tag.name}" th:href="'/tags/' + ${tag.name}">TAG</a></li>
+</ul>
+<p th:text="${post.content}" class="post__content"></p>

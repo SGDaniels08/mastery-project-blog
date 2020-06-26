@@ -1,36 +1,54 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/layout.css" />
     <title>Multithread Blog - CATEGORY</title>
-</head>
-<header><h1>Multithread Blog</h1>
+  </head>
+  <header>
+    <h1>Multithread Blog</h1>
     <nav>
-        <h2>Links</h2>
-        <ul>
-            <li><a href="/categories">Categories</a></li>
-            <li><a href="/authors">Authors</a></li>
-            <li><a href="/tags">Tags</a></li>
-        </ul>
+      <h2>Links</h2>
+      <ul>
+        <li><a href="/categories">Categories</a></li>
+        <li><a href="/authors">Authors</a></li>
+        <li><a href="/tags">Tags</a></li>
+      </ul>
     </nav>
-</header>
-<body>
+  </header>
+  <body>
     <h2 th:text="${category.name} + ' Posts'">CATEGORY Posts</h2>
     <article th:each="post : ${category.posts}">
-        <h2 class="post__title" th:text="${post.title}">POST TITLE</h2>
-        <h4 class="post__author"><a th:text="${post.author}" th:href="'/authors/' + ${post.author}">AUTHOR</a></h4>
-        <h4 class="post__publish-date" th:text="${post.publishDate}">PUBLISH-DATE</h4>
-        <h3 class="post__category"><a th:text="${post.category}" th:href="'/categories/' + ${post.category}">CATEGORY</a></h3>
-        <h3>Tags:</h3>
-        <ul th:each="tag : ${post.tags}">
-            <li><a th:text="${tag.name}" th:href="'/tags/' + ${tag.name}">TAG</a></li>
-        </ul>
-        <p th:text="${post.content}" class="post__content"></p>
+      <h2 class="post__title" th:text="${post.title}">POST TITLE</h2>
+      <h4 class="post__author">
+        <a th:text="${post.author}" th:href="'/authors/' + ${post.author}"
+          >AUTHOR</a
+        >
+      </h4>
+      <h4 class="post__publish-date" th:text="${post.publishDate}">
+        PUBLISH-DATE
+      </h4>
+      <h3 class="post__category">
+        <a
+          th:text="${post.category}"
+          th:href="'/categories/' + ${post.category}"
+          >CATEGORY</a
+        >
+      </h3>
+      <h3>Tags:</h3>
+      <ul th:each="tag : ${post.tags}">
+        <li>
+          <a th:text="${tag.name}" th:href="'/tags/' + ${tag.name}">TAG</a>
+        </li>
+      </ul>
+      <p th:text="${post.content}" class="post__content"></p>
     </article>
-</body>
-<footer></footer>
+    <form action="/categories/add" method="POST" class="new-category-form">
+        <label for="new-category__name-input" class="form__label">New Category</label>
+        <input type="text" name="name" class="form__name-input" id="new-category__name-input" />
+    </form>
+  </body>
+  <footer></footer>
 </html>
