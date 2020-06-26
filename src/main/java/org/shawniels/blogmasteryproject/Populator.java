@@ -34,7 +34,9 @@ public class Populator implements CommandLineRunner {
 
         // Authors
         Author author1 = new Author("DrShawniels");
+        Author author2 = new Author("SGDaniels08");
         authorRepo.save(author1);
+        authorRepo.save(author2);
 
         // Categories
         Category cat1 = new Category("Crochet");
@@ -56,8 +58,10 @@ public class Populator implements CommandLineRunner {
         Post post1 = new Post("Crochet Cthulhu", author1, date1, cat1, "A cute Cthulhu!", tag1, tag2);
         Post post2 = new Post("Pawprint Heart", author1, date1, cat2, "Pretty!", tag3);
         Post post3 = new Post("Chip and Dale", author1, date1, cat2, "Childhood memories <3", tag4);
+        Post post4 = new Post("Crochet Zoidberg", author2, date1, cat1, "Why not?", tag1);
         postRepo.save(post1);
         postRepo.save(post2);
         postRepo.save(post3);
+        postRepo.save(post4);
     }
 }

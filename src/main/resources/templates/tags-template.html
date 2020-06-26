@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Multithread Blog - Categories</title>
+    <title>Multithread Blog - Tags</title>
 </head>
 <header><h1>Multithread Blog</h1>
     <nav>
@@ -17,7 +17,7 @@
     </nav>
 </header>
 <body>
-<h2>Categories</h2>
+<h2>Tags</h2>
 <ul th:each="tag : ${tags}">
     <li><a th:text="${tag.name}">TAGS</a></li>
 </ul>

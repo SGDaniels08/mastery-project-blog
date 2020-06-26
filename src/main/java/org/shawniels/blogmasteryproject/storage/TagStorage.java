@@ -24,4 +24,8 @@ public class TagStorage {
     public Iterable<Tag> findAllTags() {
         return tagRepo.findAll();
     }
+
+    public Tag findTagByName(String tagName) {
+        return tagRepo.findByName(tagName);
+    }
 }

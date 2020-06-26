@@ -6,6 +6,7 @@ import org.shawniels.blogmasteryproject.storage.TagStorage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class TagController {
@@ -28,5 +29,11 @@ public class TagController {
     public String showAllTags(Model model) {
         model.addAttribute("tags", tagStorage.findAllTags());
         return "tags-template";
+    }
+
+    @GetMapping ("/tags/{tagName}")
+    public String showSingleTag(@PathVariable String tagName, Model model) {
+        model.addAttribute("tag", tagStorage.findTagByName(tagName));
+        return "tag-template";
     }
 }

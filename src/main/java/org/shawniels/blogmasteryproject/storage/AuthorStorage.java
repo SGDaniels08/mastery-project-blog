@@ -23,4 +23,8 @@ public class AuthorStorage {
     public Iterable<Author> findAllAuthors() {
         return authorRepo.findAll();
     }
+
+    public Author findAuthorByUserName(String authorUserName) {
+        return authorRepo.findByUserName(authorUserName);
+    }
 }
