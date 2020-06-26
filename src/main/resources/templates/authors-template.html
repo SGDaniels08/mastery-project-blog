@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Multithread Blog - Categories</title>
+</head>
+<header><h1>Multithread Blog</h1>
+    <nav>
+        <h2>Links</h2>
+        <ul>
+            <li><a href="/categories">Categories</a></li>
+            <li><a href="/authors">Authors</a></li>
+            <li><a href="/tags">Tags</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+<h2>Categories</h2>
+<ul th:each="author : ${authors}">
+    <li><a th:text="${author.name}">AUTHORS</a></li>
+</ul>
+</body>
+<footer></footer>
+</html>

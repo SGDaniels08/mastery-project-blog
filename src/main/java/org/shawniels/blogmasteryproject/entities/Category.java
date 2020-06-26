@@ -28,4 +28,11 @@ public class Category {
     public Collection<Post> getPosts() {
         return posts;
     }
+
+    // Other methods
+    // Other methods
+    @Override
+    public String toString() {
+        return name;
+    }
 }

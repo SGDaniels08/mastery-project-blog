@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Multithread Blog - Homepage</title>
-  </head>
-  <body>
-      <article th:each="post : ${posts}">
-      <h2 th:text="${post.title}" class="post__title">POST TITLE</h2>
-      <h4 class="post__author">AUTHOR</h4>
-      <h4 class="post__publish-date">PUBLISH-DATE</h4>
-      <h3 class="post__category">CATEGORY</h3>
-      <h3>Tags:</h3>
-      <ul>
-          <li>TAG</li>
-      </ul>
-      <p class="post__content"></p>
-      </article>
-  </body>
-  <footer></footer>
+</head>
+<header><h1>Multithread Blog</h1>
+    <nav>
+        <h2>Links</h2>
+        <ul>
+            <li><a href="/categories">Categories</a></li>
+            <li><a href="/authors">Authors</a></li>
+            <li><a href="/tags">Tags</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+<article th:each="post : ${posts}">
+    <h2 th:text="${post.title}" class="post__title">POST TITLE</h2>
+    <h4 th:text="${post.author}" class="post__author">AUTHOR</h4>
+    <h4 th:text="${post.publishDate}" class="post__publish-date">PUBLISH-DATE</h4>
+    <h3 th:text="${post.category}" class="post__category">CATEGORY</h3>
+    <h3>Tags:</h3>
+    <ul th:each="tag : ${post.tags}">
+        <li th:text="${tag.name}">TAG</li>
+    </ul>
+    <p th:text="${post.content}" class="post__content"></p>
+</article>
+<form></form>
+</body>
+<footer></footer>
 </html>

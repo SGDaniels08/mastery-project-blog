@@ -27,4 +27,10 @@ public class Author {
     public Collection<Post> getPosts() {
         return posts;
     }
+
+    // Other methods
+    @Override
+    public String toString() {
+        return userName;
+    }
 }

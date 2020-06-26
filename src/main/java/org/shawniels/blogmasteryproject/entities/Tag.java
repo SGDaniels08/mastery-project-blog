@@ -29,4 +29,6 @@ public class Tag {
     public Collection<Post> getPosts() {
         return posts;
     }
+
+
 }

@@ -1,5 +1,6 @@
 package org.shawniels.blogmasteryproject.storage;
 
+import org.shawniels.blogmasteryproject.entities.Author;
 import org.shawniels.blogmasteryproject.repositories.AuthorRepository;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +18,9 @@ public class AuthorStorage {
     // Getter
     public AuthorRepository getAuthorRepo() {
         return authorRepo;
+    }
+
+    public Iterable<Author> findAllAuthors() {
+        return authorRepo.findAll();
     }
 }

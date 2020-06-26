@@ -1,5 +1,6 @@
 package org.shawniels.blogmasteryproject.storage;
 
+import org.shawniels.blogmasteryproject.entities.Tag;
 import org.shawniels.blogmasteryproject.repositories.TagRepository;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +18,10 @@ public class TagStorage {
     // Getters
     public TagRepository getTagRepo() {
         return tagRepo;
+    }
+
+    // Other methods
+    public Iterable<Tag> findAllTags() {
+        return tagRepo.findAll();
     }
 }

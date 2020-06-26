@@ -22,7 +22,7 @@ public class PostController {
     }
 
     // HTTP Request Methods
-    @GetMapping ("home")
+    @GetMapping ({"", "/"})
     public String homePageShowAllPosts(Model model) {
         model.addAttribute("posts", postStorage.findAllPosts());
         return "homepage-template";
