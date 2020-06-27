@@ -15,16 +15,21 @@ public class AuthorStorage {
         this.authorRepo = authorRepo;
     }
 
-    // Getter
+    // Getters
     public AuthorRepository getAuthorRepo() {
         return authorRepo;
     }
 
+    // Other methods
     public Iterable<Author> findAllAuthors() {
         return authorRepo.findAll();
     }
 
     public Author findAuthorByUserName(String authorUserName) {
         return authorRepo.findByUserName(authorUserName);
+    }
+
+    public void addAuthor(Author toAdd) {
+        authorRepo.save(toAdd);
     }
 }

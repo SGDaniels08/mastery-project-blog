@@ -1,3 +1,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 
+<form action="/add-post" method="POST" class="new-post-form">
+    <label for="new-post__title-input" class="form__label">Title</label>
+    <input type="text" name="title" class="form__title-input" id="new-post__title-input" />
+    <label for="new-author__userName-input" class="form__label">New Author</label>
+    <input type="text" name="userName" class="form__author-input" id="new-author__userName-input" />
+    <!-- Hidden Label for LocalDate, set automatically -->
+    <label></label>
+    <input type="text" name="categoryName">
+    <label></label>
+    <input type="text" name="content">
+</form>

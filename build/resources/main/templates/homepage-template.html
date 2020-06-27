@@ -3,8 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/layout.css" type="text/css" />
     <title>Multithread Blog - Homepage</title>
   </head>
+  <header>
+    <h1>Multithread Blog</h1>
+    <nav>
+      <h2>Links</h2>
+      <ul>
+        <li><a href="/categories">Categories</a></li>
+        <li><a href="/authors">Authors</a></li>
+        <li><a href="/tags">Tags</a></li>
+        <li>New user?</li>
+      </ul>
+    </nav>
+  </header>
   <body>
     <article th:each="post : ${posts}">
       <h2 class="post__title" th:text="${post.title}">POST TITLE</h2>
