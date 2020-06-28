@@ -20,9 +20,15 @@
 </header>
 <body>
 <h2>Tags</h2>
-<ul th:each="tag : ${tags}">
-    <li><a th:text="${tag.name}" th:href="'/tags/' + ${tag.name}">TAGS</a></li>
+<ul>
+    <li th:each="tag : ${tags}" ><a th:text="${tag.name}" th:href="'/tags/' + ${tag.name}">TAGS</a></li>
 </ul>
+<form action="/add-tag" method="POST">
+    <h2>Add a new tag:</h2>
+    <label for="new-tag__name-input" class="form__label"></label>
+    <input type="text" name="name" id="new-tag__name-input" />
+    <button type="submit">Add new tag</button>
+</form>
 </body>
 <footer></footer>
 </html>

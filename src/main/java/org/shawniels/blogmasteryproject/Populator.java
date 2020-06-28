@@ -51,12 +51,14 @@ public class Populator implements CommandLineRunner {
         Tag pixelart = new Tag("pixelart");
         Tag cartoon = new Tag("cartoon");
         Tag gift = new Tag("gift");
+        Tag fuzzy = new Tag("fuzzy");
         tagRepo.save(amigurumi);
         tagRepo.save(mythos);
         tagRepo.save(metallic);
         tagRepo.save(pixelart);
         tagRepo.save(cartoon);
         tagRepo.save(gift);
+        tagRepo.save(fuzzy);
 
         // Posts
         Post post1 = new Post("Crochet Cthulhu", drShawniels, date1, crochet, "A cute Cthulhu!", amigurumi, mythos);

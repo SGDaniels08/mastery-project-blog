@@ -37,4 +37,11 @@ public class TagController {
         model.addAttribute("tag", tagStorage.findTagByName(tagName));
         return "tag-template";
     }
+
+    @PostMapping ("/add-tag")
+    public String addNewTag(String tagName) {
+        Tag tagToAdd = new Tag(tagName);
+        tagStorage.addTag(tagToAdd);
+        return "redirect:/tags";
+    }
 }

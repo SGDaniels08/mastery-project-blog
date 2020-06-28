@@ -28,4 +28,8 @@ public class TagStorage {
     public Tag findTagByName(String tagName) {
         return tagRepo.findByName(tagName);
     }
+
+    public void addTag(Tag tagToAdd) {
+        tagRepo.save(tagToAdd);
+    }
 }

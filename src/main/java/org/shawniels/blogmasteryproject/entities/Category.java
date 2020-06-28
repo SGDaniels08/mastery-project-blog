@@ -1,6 +1,7 @@
 package org.shawniels.blogmasteryproject.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.Collection;
@@ -10,6 +11,8 @@ public class Category {
 
     // Instance Variables
     @Id
+    @GeneratedValue
+    private int id;
     private String name;
     @OneToMany(mappedBy = "category")
     private Collection<Post> posts;
