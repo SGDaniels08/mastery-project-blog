@@ -4,11 +4,14 @@
 <form action="/add-post" method="POST" class="new-post-form">
     <label for="new-post__title-input" class="form__label">Title</label>
     <input type="text" name="title" class="form__title-input" id="new-post__title-input" />
-    <label for="new-author__userName-input" class="form__label">New Author</label>
-    <input type="text" name="userName" class="form__author-input" id="new-author__userName-input" />
-    <!-- Hidden Label for LocalDate, set automatically -->
-    <label></label>
-    <input type="text" name="categoryName">
-    <label></label>
-    <input type="text" name="content">
+    <!-- Author from droplist -->
+    <select id="new-post__userName-select" name="userName">
+        <option value="SGDaniels08">SGDaniels08</option>
+        <option value="DrShawniels">DrShawniels</option>
+    </select>
+    <!-- LocalDate set in Controller -->
+    <!-- Category from droplist -->
+    <label for="new-post__content-input" class="form__label">Blog Content:</label>
+    <input type="text" name="content" id="new-post__content-input" />
+    <!-- Selector buttons for tags -->
 </form>

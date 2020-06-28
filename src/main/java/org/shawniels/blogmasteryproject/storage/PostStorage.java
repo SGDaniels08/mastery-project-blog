@@ -24,4 +24,8 @@ public class PostStorage {
     public Iterable<Post> findAllPosts() {
         return postRepo.findAll();
     }
+
+    public void addPost(Post postToAdd) {
+        postRepo.save(postToAdd);
+    }
 }

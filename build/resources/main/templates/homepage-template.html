@@ -31,6 +31,25 @@
       </ul>
       <p th:text="${post.content}" class="post__content"></p>
     </article>
+    <form action="/add-post" method="POST" class="new-post-form">
+      <label for="new-post__title-input" class="form__label">Title</label>
+      <input type="text" name="title" class="form__title-input" id="new-post__title-input" />
+      <!-- Author from droplist , should "name" equal userName?-->
+      <label for="new-post__author-select" class="form__label">Author</label>
+      <select id="new-post__author-select" name="userName">
+        <option th:each="author : ${authors}" th:text="${author.userName}">USERNAME</option>
+      </select>
+      <!-- LocalDate set in Controller -->
+      <!-- Category from droplist ,  should "name" equal categoryName?-->
+      <label for="new-post__category-select" class="form__label">Category</label>
+      <select id="new-post__category-select" name="categoryName">
+        <option th:each="category : ${categories}" th:text="${category.categoryName}">CATEGORYNAME</option>
+      </select>
+      <label for="new-post__content-input" class="form__label">Blog Content:</label>
+      <input type="text" name="content" id="new-post__content-input" />
+      <!-- Selector buttons for tags -->
+      <button type="submit">Add post</button>
+    </form>
   </body>
   <footer></footer>
 </html>

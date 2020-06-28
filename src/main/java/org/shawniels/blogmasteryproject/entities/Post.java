@@ -37,6 +37,7 @@ public class Post {
         this.tags = new ArrayList<Tag>(Arrays.asList(tags));
     }
 
+
     // Getters
     public String getTitle() {
         return title;
