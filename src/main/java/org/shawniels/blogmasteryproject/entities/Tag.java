@@ -13,21 +13,21 @@ public class Tag {
     @Id
     @GeneratedValue
     private int id;
-    private String name;
+    private String tagName;
     @ManyToMany (mappedBy = "tags")
     private Collection<Post> posts;
 
     // Constructors
     protected Tag() {}
 
-    public Tag(String name) {
-        this.name = name;
+    public Tag(String tagName) {
+        this.tagName = tagName;
     }
 
     // Getters
 
-    public String getName() {
-        return name;
+    public String getTagName() {
+        return tagName;
     }
     public Collection<Post> getPosts() {
         return posts;

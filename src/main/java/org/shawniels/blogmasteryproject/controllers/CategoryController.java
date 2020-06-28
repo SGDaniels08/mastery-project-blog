@@ -31,7 +31,7 @@ public class CategoryController {
 
     @GetMapping ("/categories/{categoryName}")
     public String showSingleCategory(@PathVariable String categoryName, Model model) {
-        model.addAttribute("category", categoryStorage.findCategoryByName(categoryName));
+        model.addAttribute("category", categoryStorage.findCategoryByCategoryName(categoryName));
         return "category-template";
     }
 }

@@ -27,7 +27,7 @@
     <h3 class="post__category"><a th:text="${post.category}" th:href="'/categories/' + ${post.category}">CATEGORY</a></h3>
     <h3>Tags:</h3>
     <ul th:each="tag : ${post.tags}">
-        <li><a th:text="${tag.name}" th:href="'/tags/' + ${tag.name}">TAG</a></li>
+        <li><a th:text="${tag.tagName}" th:href="'/tags/' + ${tag.tagName}">TAG</a></li>
     </ul>
     <p th:text="${post.content}" class="post__content"></p>
 </article>

@@ -13,19 +13,19 @@ public class Category {
     @Id
     @GeneratedValue
     private int id;
-    private String name;
+    private String categoryName;
     @OneToMany(mappedBy = "category")
     private Collection<Post> posts;
 
     // Constructors
     protected Category() {}
-    public Category(String name) {
-        this.name = name;
+    public Category(String categoryName) {
+        this.categoryName = categoryName;
     }
 
     // Getters
-    public String getName() {
-        return name;
+    public String getCategoryName() {
+        return categoryName;
     }
     public Collection<Post> getPosts() {
         return posts;
@@ -34,6 +34,6 @@ public class Category {
     // Other methods
     @Override
     public String toString() {
-        return name;
+        return categoryName;
     }
 }

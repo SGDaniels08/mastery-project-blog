@@ -1,7 +1,6 @@
 package org.shawniels.blogmasteryproject.controllers;
 
 import org.shawniels.blogmasteryproject.entities.Tag;
-import org.shawniels.blogmasteryproject.repositories.TagRepository;
 import org.shawniels.blogmasteryproject.storage.TagStorage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,7 +33,7 @@ public class TagController {
 
     @GetMapping ("/tags/{tagName}")
     public String showSingleTag(@PathVariable String tagName, Model model) {
-        model.addAttribute("tag", tagStorage.findTagByName(tagName));
+        model.addAttribute("tag", tagStorage.findTagByTagName(tagName));
         return "tag-template";
     }
 

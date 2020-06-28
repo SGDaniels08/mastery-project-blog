@@ -25,8 +25,8 @@ public class TagStorage {
         return tagRepo.findAll();
     }
 
-    public Tag findTagByName(String tagName) {
-        return tagRepo.findByName(tagName);
+    public Tag findTagByTagName(String tagName) {
+        return tagRepo.findByTagName(tagName);
     }
 
     public void addTag(Tag tagToAdd) {
