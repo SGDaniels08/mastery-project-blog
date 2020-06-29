@@ -19,6 +19,7 @@ public class Post {
     private LocalDate publishDate;
     @ManyToOne
     private Category category;
+    private String pictureName;
     private String content;
     @ManyToMany
     private Collection<Tag> tags;
@@ -28,11 +29,12 @@ public class Post {
     protected Post() {
     }
 
-    public Post(String title, Author author, LocalDate publishDate, Category category, String content, Tag... tags) {
+    public Post(String title, Author author, LocalDate publishDate, Category category, String pictureName, String content, Tag... tags) {
         this.title = title;
         this.author = author;
         this.publishDate = publishDate;
         this.category = category;
+        this.pictureName = pictureName;
         this.content = content;
         this.tags = new ArrayList<Tag>(Arrays.asList(tags));
     }
@@ -51,10 +53,12 @@ public class Post {
     public Category getCategory() {
         return category;
     }
+    public String getPictureName() { return pictureName; }
     public String getContent() {
         return content;
     }
     public Collection<Tag> getTags() {
         return tags;
     }
+
 }

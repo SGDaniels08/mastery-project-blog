@@ -1,3 +1,22 @@
 * {
     font-family: Helvetica, sans-serif;
+    background-color: aliceblue;
+}
+
+header {
+    border-bottom: blue;
+    border-bottom-style: ridge;
+    border-bottom-width: thick;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+.post__title {
+    font-size: 30px;
+    color: blue;
+    margin: 1rem;
+    border-color: darkgrey;
+    background-color: antiquewhite;
 }

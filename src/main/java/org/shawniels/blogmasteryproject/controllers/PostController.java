@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 @Controller
@@ -50,12 +52,14 @@ public class PostController {
     }
 
     @PostMapping ("/add-post")
-    public String addPost(String title, String userName, String categoryName, String content) {
+    public String addPost(String title, String userName, String categoryName, String pictureName, String content) {
 
         Author authorToAdd = authorStorage.findAuthorByUserName(userName);
         Category categoryToAdd = categoryStorage.findCategoryByCategoryName(categoryName);
-        Post postToAdd = new Post(title, authorToAdd, LocalDate.now(), categoryToAdd, content);
+
+        Post postToAdd = new Post(title, authorToAdd, LocalDate.now(), categoryToAdd, pictureName, content);
         postStorage.addPost(postToAdd);
+
         return "redirect:/";
     }
 }

@@ -61,12 +61,12 @@ public class Populator implements CommandLineRunner {
         tagRepo.save(fuzzy);
 
         // Posts
-        Post post1 = new Post("Crochet Cthulhu", drShawniels, date1, crochet, "A cute Cthulhu!", amigurumi, mythos);
-        Post post2 = new Post("Pawprint Heart", drShawniels, date1, crossStitch, "Pretty!", metallic, gift);
-        Post post3 = new Post("Chip and Dale", drShawniels, date1, crossStitch, "Childhood memories <3", pixelart, cartoon, gift);
-        Post post4 = new Post("Crochet Zoidberg", sgdaniels08, date1, crochet, "Why not?", amigurumi, cartoon, gift);
-        Post post5 = new Post("Cardinal", drShawniels, date1, crochet, "Mother's day present for my grandmother", amigurumi, gift);
-        Post post6 = new Post("Gravity Falls Gnome", sgdaniels08, date1, crossStitch, "An unfinished but awesome project", cartoon);
+        Post post1 = new Post("Crochet Cthulhu", drShawniels, date1, crochet, "crochet-cthulhu.jpg","A cute Cthulhu!", amigurumi, mythos);
+        Post post2 = new Post("Pawprint Heart", drShawniels, date1, crossStitch, "crossstitch-pawheart.jpg","Pretty!", metallic, gift);
+        Post post3 = new Post("Chip and Dale", drShawniels, date1, crossStitch, "crossstitch-chipndale.jpg","Childhood memories <3", pixelart, cartoon, gift);
+        Post post4 = new Post("Crochet Zoidberg", sgdaniels08, date1, crochet,"crochet-zoidberg.jpg", "Why not?", amigurumi, cartoon, gift);
+        Post post5 = new Post("Cardinal", drShawniels, date1, crochet, "crochet-cardinal.jpg", "Mother's day present for my grandmother", amigurumi, gift);
+        Post post6 = new Post("Gravity Falls Gnome", sgdaniels08, date1, crossStitch,"crossstitch-gnome.jpg", "An unfinished but awesome project", cartoon);
         postRepo.save(post1);
         postRepo.save(post2);
         postRepo.save(post3);
